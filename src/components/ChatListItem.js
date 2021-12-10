@@ -2,9 +2,13 @@
 import React from "react";
 import './ChatListItem.css';
 
-export default () => {
+export default ({onClick, active}) => {
    return (
-       <div className="chatListItem">
+       <div 
+       className={`chatListItem ${active?'active':''}`}
+       onClick={onClick}
+       
+       >
           <img className="chatListItem--avatar" src="https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1" alt="" />
           <div className="chatListItem--lines">
              <div className="chatListItem--line">
@@ -13,7 +17,7 @@ export default () => {
              </div>
              <div className="chatListItem--line">
                  <div className="chatListItem--lastMsg">
-                    <p>opa, tudo bem?</p>
+                    <p>A Live vai ficar gravada?A Live vai ficar gravada?A Live vai ficar gravada?</p>
                  </div>
              </div>
           </div>

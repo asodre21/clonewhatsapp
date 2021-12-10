@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import ChatListItem from './components/ChatListItem';
+import ChatIntro from './components/ChatIntro';
+import ChatWindow from './components/ChatWindow';
 
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat';
@@ -11,7 +13,13 @@ import SearchIcon from '@material-ui/icons/Search';
 
 export default () => {
 
-  const [chatlist, setChatList] = useState([{},{},{},{}]);
+  const [chatlist, setChatList] = useState([
+    {chatId: 1, title: 'Alex Sodré', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'},
+    {chatId: 2, title: 'Alexandre Sodré', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'},
+    {chatId: 3, title: 'Roberto Marinho', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'},
+    {chatId: 4, title: 'GabiGol', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'}
+  ]);
+  const [activeChat, setActiveChat] = useState({});
 
   return (
     <div className="app-window">
@@ -43,13 +51,21 @@ export default () => {
          {chatlist.map((item, key) => (
              <ChatListItem 
                 key={key}
+                active={activeChat.chatId === chatlist[key].chatId}
+                onClick={() => setActiveChat(chatlist[key])}
              />
          ))}
        </div>
 
        </div>
        <div className="contentarea">
-        ...
+         {activeChat.chatId !== undefined &&
+            <ChatWindow />
+         }
+           {activeChat.chatId === undefined && 
+        
+           <ChatIntro />
+          }
       </div>
 
     </div>
