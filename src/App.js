@@ -20,13 +20,18 @@ export default () => {
     {chatId: 4, title: 'GabiGol', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'}
   ]);
   const [activeChat, setActiveChat] = useState({});
+  const [user, setUser] = useState({
+    id: 1234,
+    avatar: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1',
+    name: 'Alex Sodré'
+  });
 
   return (
     <div className="app-window">
       <div className="sidebar">
 
        <header>
-         <img className="header--avatar" src="https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1" alt="" />
+         <img className="header--avatar" src={user.avatar} alt="" />
          <div className="header--buttons">
            <div className="header--btn">
               <DonutLargeIcon style={{color: '#919191'}} />
@@ -61,7 +66,9 @@ export default () => {
        </div>
        <div className="contentarea">
          {activeChat.chatId !== undefined &&
-            <ChatWindow />
+            <ChatWindow 
+              user = {user}
+            />
          }
            {activeChat.chatId === undefined && 
         

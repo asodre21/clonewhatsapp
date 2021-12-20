@@ -50,6 +50,14 @@ margin-right: 15px;
   background-size: cover;
   background-position: center;
   background-image: url('https://cutewallpaper.org/21/wallpaper-for-whatsapp/Best-52+-Whatsapp-Background-on-HipWallpaper-Whatsapp-.png');
+  padding: 20px 30px;
+}
+.chatWindow--body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.chatWindow--body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .chatWindow--footer {
   height: 62px;
