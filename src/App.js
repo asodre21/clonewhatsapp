@@ -14,8 +14,8 @@ import SearchIcon from '@material-ui/icons/Search';
 export default () => {
 
   const [chatlist, setChatList] = useState([
-    {chatId: 1, title: 'Alex Sodré', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'},
-    {chatId: 2, title: 'Alexandre Sodré', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'},
+    {chatId: 1, title: 'Cristiano Ronaldo ', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'},
+    {chatId: 2, title: 'Messi ', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'},
     {chatId: 3, title: 'Roberto Marinho', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'},
     {chatId: 4, title: 'GabiGol', image: 'https://i0.wp.com/maikon.biz/wp-content/uploads/2020/06/gerador-de-persona-maikonbiz.png?fit=1080%2C1080&ssl=1'}
   ]);
@@ -51,6 +51,7 @@ export default () => {
          {chatlist.map((item, key) => (
              <ChatListItem 
                 key={key}
+                data={item}
                 active={activeChat.chatId === chatlist[key].chatId}
                 onClick={() => setActiveChat(chatlist[key])}
              />
